@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HCM Lite | Human Capital Management</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <main class="container-fluid">
+    <div class="row min-vh-100">
+
+      <!-- Left Branding Panel -->
+      <section class="col-lg-6 brand-panel">
+        <div class="brand-content">
+
+          <a href="#" class="brand-logo text-decoration-none">
+            HCM <span>Lite.</span>
+          </a>
+
+          <div class="brand-message">
+            <span class="badge rounded-pill mb-3">
+              HUMAN CAPITAL MANAGEMENT
+            </span>
+
+            <h1>
+              Your people.<br>
+              Your workplace.<br>
+              <span>One simple platform.</span>
+            </h1>
+
+            <p>
+              Manage employees, track attendance, simplify
+              leave requests and keep your HR work organized.
+            </p>
+          </div>
+
+          <div class="brand-features">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="feature-icon">01</div>
+              <div>
+                <h2>Employee Management</h2>
+                <p>Keep your team organized.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="feature-icon">02</div>
+              <div>
+                <h2>Attendance Tracking</h2>
+                <p>View daily attendance records.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+              <div class="feature-icon">03</div>
+              <div>
+                <h2>Leave & Payslip</h2>
+                <p>Manage leave and salary records.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="brand-footer">
+            HCM Lite · Simple HR, smarter work.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- Right Authentication Panel -->
+      <section class="col-lg-6 auth-panel">
+        <div class="auth-content">
+
+          <!-- Login Form -->
+          <div class="auth-heading">
+            <span class="section-label">WELCOME TO HCM LITE</span>
+            <h2>Sign in to your account</h2>
+            <p>Enter your details to access your workspace.</p>
+          </div>
+
+          <form action="./pages/admin.html" method="get">
+
+            <div class="mb-3">
+              <label for="login-email" class="form-label">
+                Email address
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="login-email"
+                placeholder="you@company.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="mb-4">
+              <label for="login-password" class="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                id="login-password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              >
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 auth-button">
+              Sign In
+            </button>
+
+          </form>
+
+          <div class="auth-divider">
+            <span>FIRST TIME SETUP</span>
+          </div>
+
+          <!-- First-run Company Setup -->
+          <div class="setup-card">
+            <div class="setup-heading">
+              <div class="setup-icon">+</div>
+              <div>
+                <h3>Set up your company</h3>
+                <p>Create your company and Admin account.</p>
+              </div>
+            </div>
+
+            <form action="./pages/admin.html" method="get">
+
+              <div class="mb-3">
+                <label for="company-name" class="form-label">
+                  Company name
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="company-name"
+                  placeholder="Enter company name"
+                  required
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="admin-name" class="form-label">
+                  Admin full name
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="admin-name"
+                  placeholder="Enter full name"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="admin-email" class="form-label">
+                  Admin email
+                </label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="admin-email"
+                  placeholder="admin@company.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="admin-password" class="form-label">
+                  Create password
+                </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="admin-password"
+                  placeholder="Create a password"
+                  autocomplete="new-password"
+                  required
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-outline-primary w-100 setup-button"
+              >
+                Create Admin Account
+              </button>
+
+            </form>
+          </div>
+
+          <p class="auth-note">
+            Secure access for your company workspace.
+          </p>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>

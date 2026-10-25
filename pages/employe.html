@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Dashboard | HCM Lite</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+
+      <!-- Sidebar -->
+      <aside class="col-lg-2 col-md-3 dashboard-sidebar p-4">
+        <h3 class="brand-title mb-5">HCM Lite</h3>
+
+        <nav class="nav flex-column gap-2">
+          <a class="nav-link active" href="./employee.html">My Dashboard</a>
+          <a class="nav-link" href="#attendance">My Attendance</a>
+          <a class="nav-link" href="#leave">Apply for Leave</a>
+          <a class="nav-link" href="#helper">Smart Helper</a>
+          <a class="nav-link mt-4" href="../index.html">Logout</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="col-lg-10 col-md-9 p-4 p-lg-5">
+
+        <header class="d-flex flex-wrap justify-content-between
+          align-items-center gap-3 mb-5">
+          <div>
+            <p class="text-secondary mb-1">EMPLOYEE PORTAL</p>
+            <h1 class="dashboard-heading">My Dashboard</h1>
+            <p class="text-secondary mb-0">
+              Manage your attendance and leave requests.
+            </p>
+          </div>
+
+          <div class="admin-profile">
+            <span class="profile-avatar">E</span>
+            <div>
+              <strong>Employee Name</strong>
+              <p class="text-secondary mb-0 small">Employee</p>
+            </div>
+          </div>
+        </header>
+
+        <!-- Attendance Actions -->
+        <section id="attendance" class="dashboard-card mb-4">
+          <div class="d-flex flex-wrap justify-content-between
+            align-items-center gap-3 mb-4">
+            <div>
+              <h4 class="section-heading mb-1">Today's Attendance</h4>
+              <p class="text-secondary small mb-0">
+                Record your workday attendance.
+              </p>
+            </div>
+            <span class="status-badge">Not Checked In</span>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="attendance-time-card">
+                <p class="text-secondary small mb-2">Check-in Time</p>
+                <h3>--:--</h3>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="attendance-time-card">
+                <p class="text-secondary small mb-2">Check-out Time</p>
+                <h3>--:--</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <button type="button" class="btn btn-primary px-4 py-2">
+              Check In
+            </button>
+            <button type="button" class="btn btn-outline-secondary px-4 py-2">
+              Check Out
+            </button>
+          </div>
+        </section>
+
+        <!-- My Attendance History -->
+        <section class="dashboard-card mb-4">
+          <h4 class="section-heading mb-1">My Attendance History</h4>
+          <p class="text-secondary small mb-4">
+            Review your previous attendance records.
+          </p>
+
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Check In</th>
+                  <th>Check Out</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="4" class="text-center py-4">
+                    <p class="mb-1">No attendance history yet</p>
+                    <span class="text-secondary small">
+                      Your records will appear here.
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Leave Application -->
+        <section id="leave" class="dashboard-card mb-4">
+          <h4 class="section-heading mb-1">Apply for Leave</h4>
+          <p class="text-secondary small mb-4">
+            Submit a leave request to your administrator.
+          </p>
+
+          <form>
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="leaveType" class="form-label">Leave Type</label>
+                <select id="leaveType" class="form-select" required>
+                  <option value="">Select leave type</option>
+                  <option value="Casual">Casual Leave</option>
+                  <option value="Sick">Sick Leave</option>
+                  <option value="Annual">Annual Leave</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="leaveStart" class="form-label">Start Date</label>
+                <input type="date" id="leaveStart"
+                  class="form-control" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="leaveEnd" class="form-label">End Date</label>
+                <input type="date" id="leaveEnd"
+                  class="form-control" required>
+              </div>
+
+              <div class="col-12">
+                <label for="leaveReason" class="form-label">Reason</label>
+                <textarea id="leaveReason" class="form-control" rows="4"
+                  placeholder="Explain why you need leave..."
+                  required></textarea>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary px-4 py-2">
+                  Submit Leave Request
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </section>
+
+        <!-- My Leave Requests -->
+        <section class="dashboard-card mb-4">
+          <h4 class="section-heading mb-1">My Leave Requests</h4>
+          <p class="text-secondary small mb-4">
+            Track the status of your leave applications.
+          </p>
+
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Leave Type</th>
+                  <th>Dates</th>
+                  <th>Status</th>
+                  <th>Admin Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="4" class="text-center py-4">
+                    <p class="mb-1">No leave requests yet</p>
+                    <span class="text-secondary small">
+                      Your submitted requests will appear here.
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Smart Helper -->
+        <section id="helper" class="dashboard-card mb-4">
+          <div class="settings-section-heading mb-3">
+            <div class="helper-icon">✦</div>
+            <div>
+              <h4 class="section-heading mb-1">Smart Helper</h4>
+              <p class="text-secondary small mb-0">
+                Ask about attendance, leave or company policies.
+              </p>
+            </div>
+          </div>
+
+          <div class="helper-input d-flex flex-wrap gap-2">
+            <input type="text" class="form-control"
+              placeholder="e.g. What is my attendance status?"
+              aria-label="Ask the Smart Helper">
+            <button type="button" class="btn btn-primary px-4">
+              Ask
+            </button>
+          </div>
+        </section>
+
+        <!-- Announcements -->
+        <section class="dashboard-card">
+          <h4 class="section-heading mb-1">Announcements</h4>
+          <p class="text-secondary small mb-4">
+            Important updates from your company.
+          </p>
+
+          <div class="empty-state">
+            <h5>No announcements yet</h5>
+            <p class="text-secondary mb-0">
+              Company announcements will appear here.
+            </p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

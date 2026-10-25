@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Monthly Payslip | HCM Lite</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="payslip-page">
+
+  <div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="admin.html" class="brand">
+        HCM <span>Lite</span>
+      </a>
+
+      <p class="sidebar-label">WORKSPACE</p>
+
+      <nav class="sidebar-nav">
+        <a href="admin.html">Dashboard</a>
+        <a href="employe.html">Employee Portal</a>
+        <a href="employees.html">Employees</a>
+        <a href="leaves.html">Leave Requests</a>
+        <a href="payslip.html" class="active">Pay slips</a>
+        <a href="setting.html">Settings</a>
+        <a class="nav-link mt-4" href="../index.html">Logout</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p class="mb-1">HCM Lite</p>
+        <small>Human Capital Management</small>
+        <a href="index.html" class="logout-link">Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <header class="topbar">
+        <div>
+          <p class="page-eyebrow">PAYROLL MANAGEMENT</p>
+          <h1>Monthly Payslip</h1>
+          <p class="page-subtitle">
+            Review employee salary details and prepare payslips.
+          </p>
+        </div>
+
+        <span class="status-badge">Admin View</span>
+      </header>
+
+      <!-- Filters -->
+      <section class="content-section payslip-filter-section">
+
+        <div class="section-heading">
+          <div>
+            <h2>Payslip Details</h2>
+            <p>Select an employee and payroll month.</p>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <form>
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="employee" class="form-label">
+                  Employee
+                </label>
+
+                <select id="employee" class="form-select">
+                  <option value="">Select employee</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="month" class="form-label">
+                  Payroll Month
+                </label>
+
+                <input
+                  type="month"
+                  id="month"
+                  class="form-control"
+                >
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+      </section>
+
+      <!-- Payslip Preview -->
+      <section class="content-section">
+
+        <div class="section-heading payslip-preview-heading">
+          <div>
+            <h2>Payslip Preview</h2>
+            <p>
+              Preview template — actual salary data is not connected yet.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-dark print-button"
+            onclick="window.print()"
+          >
+            Print / Save PDF
+          </button>
+        </div>
+
+        <article class="payslip-card">
+
+          <!-- Payslip Header -->
+          <div class="payslip-header">
+
+            <div class="company-details">
+              <div class="payslip-logo">H</div>
+
+              <div>
+                <p class="payslip-eyebrow">SALARY STATEMENT</p>
+                <h2>Company Name</h2>
+                <p class="company-subtitle">
+                  Monthly Employee Payslip
+                </p>
+              </div>
+            </div>
+
+            <div class="payslip-period">
+              <span>PAY PERIOD</span>
+              <h3>Month, Year</h3>
+              <span class="payslip-status">Salary Statement</span>
+            </div>
+
+          </div>
+
+          <hr class="payslip-divider">
+
+          <!-- Employee Information -->
+          <div class="payslip-info-grid">
+
+            <div class="payslip-info-item">
+              <span class="detail-label">EMPLOYEE NAME</span>
+              <p>Employee Name</p>
+            </div>
+
+            <div class="payslip-info-item">
+              <span class="detail-label">EMPLOYEE ID</span>
+              <p>—</p>
+            </div>
+
+            <div class="payslip-info-item">
+              <span class="detail-label">DEPARTMENT</span>
+              <p>—</p>
+            </div>
+
+            <div class="payslip-info-item">
+              <span class="detail-label">PAYMENT DATE</span>
+              <p>—</p>
+            </div>
+
+          </div>
+
+          <!-- Earnings and Deductions -->
+          <div class="row g-4 payslip-breakdown">
+
+            <div class="col-md-6">
+              <div class="salary-panel">
+
+                <div class="salary-panel-heading">
+                  <span class="salary-icon">+</span>
+                  <h3>Earnings</h3>
+                </div>
+
+                <div class="salary-row">
+                  <span>Basic Salary</span>
+                  <strong>Rs. 0</strong>
+                </div>
+
+                <div class="salary-row">
+                  <span>Allowances</span>
+                  <strong>Rs. 0</strong>
+                </div>
+
+                <div class="salary-row salary-total">
+                  <span>Total Earnings</span>
+                  <strong>Rs. 0</strong>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="salary-panel">
+
+                <div class="salary-panel-heading">
+                  <span class="salary-icon deduction-icon">−</span>
+                  <h3>Deductions</h3>
+                </div>
+
+                <div class="salary-row">
+                  <span>Other Deductions</span>
+                  <strong>Rs. 0</strong>
+                </div>
+
+                <div class="salary-row salary-total">
+                  <span>Total Deductions</span>
+                  <strong>Rs. 0</strong>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Net Salary -->
+          <div class="net-salary">
+
+            <div>
+              <span class="net-salary-label">NET SALARY</span>
+              <p>Final amount payable</p>
+            </div>
+
+            <h2>Rs. 0</h2>
+
+          </div>
+
+          <footer class="payslip-footer">
+            <p>
+              This is a preview template. Actual salary figures
+              will be connected when payroll functionality is implemented.
+            </p>
+
+            <span>HCM Lite · Payroll</span>
+          </footer>
+
+        </article>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
